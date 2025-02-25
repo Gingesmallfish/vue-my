@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>加减计数器</title>
+    <style>
+        .counter {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        button {
+            margin: 0 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+<div class="counter">
+    <button id="decrement">-</button>
+    <span id="count">1</span>
+    <button id="increment">+</button>
+</div>
+
+<script>
+    const countElement = document.getElementById('count');
+    let count = 1;
+
+    document.getElementById('increment').addEventListener('click', () => {
+        count++;
+        countElement.textContent = count;
+    });
+
+    document.getElementById('decrement').addEventListener('click', () => {
+        count--;
+        countElement.textContent = count;
+    });
+</script>
+</body>
+</html>

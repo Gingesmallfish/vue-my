@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./js/vue.global.js"></script>
+</head>
+<body>
+<!-- 试图 -->
+<div id="app">
+    {{ msg }}
+    <br>
+    <input type="text" v-model="msg">
+    <h1 v-text="msg"></h1>
+    {{ content }}
+    <div v-html="content"></div>
+    <div v-text="content"></div>
+    <img src="./img/logo.png" alt="">
+    <br>
+    <img v-bind:src="img" alt="">
+    <img  :width="imgWidth" :src="img" alt="">
+    <br>
+    <img :height="height" :src="img" alt="">
+    <br>
+    <br>
+    <!-- 绑定事件 -->
+    <button @click="a=a+1">+1</button> {{ a }}
+</div>
+
+<script>
+    // Vue 实例
+    const app = Vue.createApp({
+        // 数据
+        data() {
+            return {
+                msg: 'Hello Vue!',
+                content: '<h1>Hello Bue</h1>',
+                // 图片
+                img: './img/logo.png',
+                // 图片的宽度
+                imgWidth: 500,
+                height: 250,
+                a:1
+            };
+        }
+    }).mount('#app')
+</script>
+</body>
+</html>
